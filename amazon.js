@@ -29,7 +29,6 @@ async function scrapePage(page) {
                 products.push({ title, link, price, rating });
             }
         });
-        crawlab.saveItems(products);
         return products;
     });
 
@@ -61,7 +60,7 @@ async function scrapeAmazon(keyword, maxPages = 1) {
 
         const products = await scrapePage(page);
         allProducts = allProducts.concat(products);
-
+        crawlab.saveItems(products);
         currentPage++;
     }
 
