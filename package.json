@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "crawlab-sdk": "^0.6.0-12",
+    "fuse.js": "^6.6.2",
+    "puppeteer": "^20.1.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-stealth": "^0.0.1"
+  }
+}
