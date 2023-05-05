@@ -60,7 +60,6 @@ async function scrapeAmazon(keyword, maxPages = 1) {
 
         const products = await scrapePage(page);
         allProducts = allProducts.concat(products);
-        crawlab.saveItems(products);
         currentPage++;
     }
 
@@ -79,6 +78,7 @@ const maxPages = process.argv[3] ? parseInt(process.argv[3], 10) : 1;
 scrapeAmazon(keyword, maxPages)
     .then((products) => {
         console.log('Products:', products);
+        crawlab.saveItems(products);
     })
     .catch((error) => {
         console.error('Error:', error);
