@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
-
+const crawlab = require('crawlab-sdk');
 puppeteer.use(StealthPlugin());
 
 async function scrapePage(page) {
@@ -29,7 +29,7 @@ async function scrapePage(page) {
                 products.push({ title, link, price, rating });
             }
         });
-
+        crawlab.saveItems(products);
         return products;
     });
 
